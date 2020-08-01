@@ -227,30 +227,6 @@ $code=$row['code'];
 
 mysqli_query($conn,"update prizes set won=1 where id=$id;");
 mysqli_query($conn,"insert into winners values ($userid,$id,now());");
-
-
-$token = "bOeSTIZ465ktaTnvQ3lFKKFap4mp7zHzfGoIiD-GU-hxOvdjoZB4sjLKOpoFX3yO";
-
-// Prepare data for POST request
-$data =array(
-    "to" =>      "$number",
-    "message" =>  "ေငြျဖည့္နံပါတ္[ငွေဖြည့်နံပါတ်]($operator)>>>$code\nsent from KanSannLike",
-    "sender" =>      ""
-);
-
-
-$ch = curl_init("https://smspoh.com/api/v2/send");
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Authorization: Bearer ' . $token,
-        'Content-Type: application/json'
-    ));
-
-curl_exec($ch);
-curl_close($ch);
-
 ?>
 <script>
 
