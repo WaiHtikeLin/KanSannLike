@@ -1,7 +1,0 @@
-{
-    "require": {
-        "geoip2/geoip2": "~2.0",
-        "maxmind-db/reader": "~1.0",
-        "geoip/geoip": "~1.16"
-    }
-}
